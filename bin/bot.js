@@ -38,6 +38,7 @@ const webServer = new WebInstance({
 
 // bots keep
 const bots = {};
+
 async function createBot() {
   try {
     // dumbledore bot
