@@ -82,10 +82,12 @@ async function startBot() {
 
         // base64 encoded token
         let token = process.env.BOT_API_KEY;
+
         if (token.length > 42) token = atob(token);
 
         const obj = new Parse.Object(DB.BOT.CALL);
-        await obj.save({
+        
+	      await obj.save({
           [DB.BOT.BOT_NAME]: name,
           [DB.BOT.BOT_API_KEY]: token
         });
