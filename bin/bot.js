@@ -62,12 +62,16 @@ async function createBot() {
 
 async function startBot() {
   try {
+
+
     await parseServer.create();
     await webServer.create();
 
     // parse js sdk
     Parse.initialize(process.env.APP_ID || 'myAppId', null, process.env.MASTER_KEY || 'masterKey');
-    Parse.serverURL = process.env.SERVER_URL || 'http://localhost:1337/parse';
+    
+	  
+	  Parse.serverURL = process.env.SERVER_URL || 'http://localhost:1337/parse';
 
     if (process.env.NODE_ENV === 'development') {
       const query = new Parse.Query(DB.BOT.CALL);
